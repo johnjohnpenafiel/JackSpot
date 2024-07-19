@@ -27,7 +27,7 @@ const Sidebar: React.FC<SidebarProps> = ({
     "define your project routes"
     const routes = useMemo(() => [
         {
-            icon: HiHome,
+            icon: HiHome, 
             label: 'Home',
             active: pathname !== '/search',
             href: '/'
@@ -42,27 +42,9 @@ const Sidebar: React.FC<SidebarProps> = ({
     
     return (
         <div className="flex h-full">
-            <div 
-            className="
-                    hidden
-                    md:flex
-                    flex-col
-                    gap-y-2
-                    bg-black
-                    h-fullw-[300px]
-                    p-2
-                "
-            >
+            <div className=" hidden md:flex flex-col gap-y-2 bg-black h-full w-[300px] p-2">
                 <Box>
-                    <div className="
-                        flex
-                        flex-col
-                        gap-y-4
-                        px-5
-                        py-4
-
-                    "
-                >
+                    <div className="flex flex-col gap-y-4 px-5 py-4">
                         {routes.map((item) => (
                             <SidebarItem 
                                 key={item.label}
@@ -72,7 +54,7 @@ const Sidebar: React.FC<SidebarProps> = ({
                     </div>
                 </Box>
                 <Box className="overflow-y-auto h-full">
-                    Collections Library
+                    Collections
                 </Box>
             </div>
         </div>
