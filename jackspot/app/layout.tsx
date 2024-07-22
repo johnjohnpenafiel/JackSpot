@@ -11,11 +11,8 @@ export const metadata: Metadata = {
   description: "Share your favorite spots",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  
   return (
     <html lang="en">
       <body className={font.className}>
