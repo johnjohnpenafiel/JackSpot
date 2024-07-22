@@ -11,7 +11,7 @@ export default function Home() {
             Welcome back
           </h1>
           <div className='grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-3 mt-4'>
-            <ListItem  image='/images/liked.webp' name='Liked spots' href='liked'/>
+            <ListItem  image='/images/liked.webp' name='Liked Spots' href='liked'/>
           </div>
         </div>
       </Header>

@@ -24,7 +24,7 @@ const ListItem: React.FC<ListItemProps> = ({ image, name, href }) => {
         <div className='relative min-h-[64px] min-w-[64px]'>
             <Image className='object-cover' fill src={image} alt='image'/>
         </div>
-        <p>
+        <p className='font-medium truncate py-5'>
             {name}
         </p>
     </button>
