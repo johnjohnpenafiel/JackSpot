@@ -4,6 +4,8 @@ import React, { useEffect, useState } from 'react'
 import { HiCollection } from "react-icons/hi";
 import { AiOutlinePlus } from "react-icons/ai"
 
+import ListItem from './ListItem';
+
 const Library = () => {
     const onClick= () => {
         // Handle upload later
@@ -17,7 +19,16 @@ const Library = () => {
         .then(setCollections)
     }, [])
 
+    const collection_list = collections.map((collection) => (
+        <ListItem
+        key={collection.id}
+        id={collection.id}
+        title={collection.title}
+        />
 
+        
+
+    ))
 
   return (
     <div className='flex flex-col'>
@@ -32,6 +43,9 @@ const Library = () => {
         </div>
         <div className='flex flex-col gap-y-2 mt-4 px-3'>
             List of collections
+        </div>
+        <div>
+            {collection_list}
         </div>
 
     </div>
