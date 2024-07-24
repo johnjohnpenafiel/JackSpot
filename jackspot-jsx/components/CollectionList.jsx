@@ -8,14 +8,14 @@ function CollectionList({ id, title, handleClick }) {
 
     const router = useRouter();
 
-    const onClick = () => {
-        // add authentication before push
-        router.push(href)
-    }
-
+    // const onClick = () => {
+    //     // add authentication before push
+    //     router.push(href)
+    // }
+  
   return (
     <>
-        <p onClick={handleClick} className='hover:text-slate-500'>{title}</p>
+        <p id={id} onClick={() => handleClick(id)} className='hover:text-slate-500'>{title}</p>
     </>
   )
 }

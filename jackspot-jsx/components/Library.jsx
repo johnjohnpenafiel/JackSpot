@@ -21,25 +21,26 @@ function Library() {
 
     function handleClick(id) {
         setViewSpots(true)
-        console.log(id)
+        // console.log(event.target.id)
         event.preventDefault();
-        fetch(`http://localhost:5555/spots/1`)
+        fetch(`http://localhost:5555/spots/${id}`)
           .then(r => r.json())
           .then(setSpots) 
 
-      }
-   
-    const collection_list = collections.map((collection) => (
-        <CollectionList key={collection.id} id={collection.id} title={collection.title} handleClick={handleClick} />
-    ))
-
-    const spotsList = spots.map((spot) => (
-        <SpotsList key={spot.id} name={spot.name}/>
-      ));
+    };
 
     function handleBack() {
         setViewSpots(false)
-    }
+    };
+   
+    const collection_list = collections.map((collection) => (
+        <CollectionList key={collection.id} id={collection.id} title={collection.title} handleClick={handleClick} />
+    ));
+
+    const spotsList = spots.map((spot) => (
+        <SpotsList key={spot.id} name={spot.name}/>
+    ));
+
 
   return (
     <div className='flex flex-col'>
