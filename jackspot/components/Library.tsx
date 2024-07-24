@@ -2,16 +2,16 @@
 
 import React, { useEffect, useState } from 'react'
 import { HiCollection } from "react-icons/hi";
-import { AiOutlinePlus } from "react-icons/ai"
+import { RxCaretLeft } from 'react-icons/rx';
 
-import ListItem from './ListItem';
+import CollectionList from './CollectionList';
+import SpotsList from './SpotsList';
 
-const Library = () => {
-    const onClick= () => {
-        // Handle upload later
-    };
+function Library() {
 
     const [collections, setCollections]= useState([])
+    const [spots, setSpots]= useState([])
+    const [viewSpots, setViewSpots] = useState(false)
 
     useEffect(() => {
         fetch('http://127.0.0.1:5555/1/collections')
@@ -19,16 +19,25 @@ const Library = () => {
         .then(setCollections)
     }, [])
 
+    function handleClick() {
+        setViewSpots(true)
+        event.preventDefault();
+        fetch(`http://localhost:5555/spots/1`)
+          .then(r => r.json())
+          .then(setSpots) 
+      }
+   
     const collection_list = collections.map((collection) => (
-        <ListItem
-        key={collection.id}
-        id={collection.id}
-        title={collection.title}
-        />
-
-        
-
+        <CollectionList key={collection.id} id={collection.id} title={collection.title} handleClick={handleClick} />
     ))
+
+    const spotsList = spots.map((spot) => (
+        <SpotsList key={spot.id} name={spot.name}/>
+      ));
+
+    function handleBack() {
+        setViewSpots(false)
+    }
 
   return (
     <div className='flex flex-col'>
@@ -39,15 +48,11 @@ const Library = () => {
                     Your Collections
                 </p>
             </div>
-            <AiOutlinePlus onClick={onClick} size={20} className='text-neutral-400 cursor-pointer hover:text-white transition'/>
+            <RxCaretLeft onClick={handleBack} size={30} className='text-neutral-400 cursor-pointer hover:text-white transition'/>
         </div>
-        <div className='flex flex-col gap-y-2 mt-4 px-3'>
-            List of collections
+        <div className='flex flex-col gap-y-2 mt-4 px-3 text-2xl'>
+            {viewSpots ? spotsList : collection_list}
         </div>
-        <div>
-            {collection_list}
-        </div>
-
     </div>
   )
 }

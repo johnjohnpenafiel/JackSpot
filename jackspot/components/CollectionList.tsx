@@ -2,14 +2,9 @@
 
 import { useRouter } from 'next/navigation'
 import React from 'react'
-import Image from 'next/image'
 
-interface ListItemProps {
-    id: number,
-    title: string,
-}
 
-const ListItem: React.FC<ListItemProps> = ({ id, title }) => {
+function CollectionList({ id, title, handleClick }) {
 
     const router = useRouter();
 
@@ -20,9 +15,9 @@ const ListItem: React.FC<ListItemProps> = ({ id, title }) => {
 
   return (
     <>
-        <p className='flex flex-col gap-y-2 mt-4 px-3'>{title}</p>
+        <p onClick={handleClick} className='hover:text-slate-500'>{title}</p>
     </>
   )
 }
 
-export default ListItem
+export default CollectionList;
