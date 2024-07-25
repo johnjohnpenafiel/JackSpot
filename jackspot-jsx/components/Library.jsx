@@ -14,7 +14,8 @@ function Library() {
     const [viewSpots, setViewSpots] = useState(false)
 
     useEffect(() => {
-        fetch('http://127.0.0.1:5555/1/collections')
+        // UPDATE with user id param
+        fetch('http://127.0.0.1:5555/api/1/collections')
         .then(r => r.json())
         .then(setCollections)
     }, [])
@@ -23,7 +24,7 @@ function Library() {
         setViewSpots(true)
         // console.log(event.target.id)
         event.preventDefault();
-        fetch(`http://localhost:5555/spots/${id}`)
+        fetch(`http://localhost:5555/api/${id}/spots`)
           .then(r => r.json())
           .then(setSpots) 
 
