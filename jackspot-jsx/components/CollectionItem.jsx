@@ -14,9 +14,13 @@ function CollectionList({ id, title, handleClick }) {
     // }
   
   return (
-    <>
-        <p id={id} onClick={() => handleClick(id)} className='hover:text-slate-500'>{title}</p>
-    </>
+    <div onClick={() => handleClick(id)} className='flex items-center gap-x-3 cursor-pointer hover:bg-neutral-800/50 w-full p-2 rounded-md'>
+      <div className='flex flex-col gap-y-1 overflow-hidden'>
+        <p className='text-white truncate'>
+          {title}
+        </p>
+      </div>
+    </div>
   )
 }
 

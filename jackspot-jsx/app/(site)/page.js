@@ -1,6 +1,10 @@
-import Header from "@/components/Header";
 
-export default function Home() {
+import Header from "@/components/Header";
+import Body from "@/components/Body";
+
+function Home() {
+  
+  
   return (
     <div className="bg-neutral-900 rounded-lg h-full w-full overflow-hidden overflow-y-auto">
       <Header>
@@ -9,7 +13,7 @@ export default function Home() {
             Welcome back John!
           </h1>
           <div className='grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-3 mt-4'>
-            Test!
+            Test
           </div>
         </div>
       </Header>
@@ -20,9 +24,11 @@ export default function Home() {
           </h1>
         </div>
         <div>
-          List of Spots!
+          <Body />
         </div>
       </div>
     </div> 
   );
 }
+
+export default Home;

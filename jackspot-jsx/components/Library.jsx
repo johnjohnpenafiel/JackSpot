@@ -1,11 +1,11 @@
 'use client';
 
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from "react"
 import { HiCollection } from "react-icons/hi";
 import { RxCaretLeft } from 'react-icons/rx';
 
-import CollectionList from './CollectionList';
-import SpotsList from './SpotsList';
+import CollectionItem from './CollectionItem';
+import SpotsItem from './SpotsItem';
 
 function Library() {
 
@@ -34,11 +34,11 @@ function Library() {
     };
    
     const collection_list = collections.map((collection) => (
-        <CollectionList key={collection.id} id={collection.id} title={collection.title} handleClick={handleClick} />
+        <CollectionItem key={collection.id} id={collection.id} title={collection.title} handleClick={handleClick} />
     ));
 
     const spotsList = spots.map((spot) => (
-        <SpotsList key={spot.id} name={spot.name}/>
+        <SpotsItem key={spot.id} name={spot.name}/>
     ));
 
 
