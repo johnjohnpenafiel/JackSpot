@@ -39,13 +39,13 @@ function Library() {
     ));
 
     const spotsList = spots.map((spot) => (
-        <SpotsItem key={spot.id} name={spot.name}/>
+        <SpotsItem key={spot.id} name={spot.name} type={spot.type}/>
     ));
 
 
   return (
     <div className='flex flex-col'>
-        <div className='flex items-center justify-between px-5 pt-4'>
+        <div className='flex items-center justify-between px-5 pt-4 sticky top-0 bg-neutral-900 z-10'>
             <div className='inline-flex items-center gap-x-2'>
                 <HiCollection className='text-neutral-400' size={23} />
                 <p className='text-neutral-400 font-medium text-md'>
