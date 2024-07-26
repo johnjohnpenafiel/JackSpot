@@ -21,16 +21,16 @@ function Library() {
     }, [])
 
     function handleClick(id) {
-            // console.log(event.target.id)
         event.preventDefault();
         fetch(`http://localhost:5555/api/${id}/spots`)
-          .then(r => r.json())
-          .then(setSpots) 
+        .then(r => r.json())
+        .then(setSpots) 
         setViewSpots(true)
     };
 
     function handleBack() {
         setViewSpots(false)
+        setSpots([])
     };
    
     const collection_list = collections.map((collection) => (
@@ -43,6 +43,7 @@ function Library() {
 
 
   return (
+    
     <div className='flex flex-col'>
         <div className='flex items-center justify-between px-5 pt-4 sticky top-0 bg-neutral-900 z-10'>
             <div className='inline-flex items-center gap-x-2'>
