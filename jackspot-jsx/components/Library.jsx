@@ -5,7 +5,7 @@ import { HiCollection } from "react-icons/hi";
 import { RxCaretLeft } from 'react-icons/rx';
 
 import CollectionItem from './CollectionItem';
-import SpotsItem from './SpotsItem';
+import SpotItem from './SpotItem';
 
 function Library() {
 
@@ -21,13 +21,12 @@ function Library() {
     }, [])
 
     function handleClick(id) {
-        setViewSpots(true)
-        // console.log(event.target.id)
+            // console.log(event.target.id)
         event.preventDefault();
         fetch(`http://localhost:5555/api/${id}/spots`)
           .then(r => r.json())
           .then(setSpots) 
-
+        setViewSpots(true)
     };
 
     function handleBack() {
@@ -39,7 +38,7 @@ function Library() {
     ));
 
     const spotsList = spots.map((spot) => (
-        <SpotsItem key={spot.id} name={spot.name} type={spot.type}/>
+        <SpotItem key={spot.id} id={spot.id} name={spot.name} type={spot.type}/>
     ));
 
 
