@@ -3,7 +3,7 @@
 import React from 'react'
 import { useState } from 'react'
 import { useForm } from "react-hook-form"
-import { toast } from "react-hot-toast"
+import { toast, Toaster } from "react-hot-toast"
 import { useRouter } from 'next/navigation';
 
 import Modal from './Modal'
@@ -71,20 +71,34 @@ function PostModal() {
     }
   
     return (
-
-    <Modal 
-        title='Add a Collection' 
-        description='Name your collection' 
-        isOpen={postModal.isOpen} 
-        onChange={onChange}
-    >
-        <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col gap-y-4'>
-            <Input id='title' disabled={isLoading} {...register('title', { required: true })} placeholder='Collection Title' />
-            <Button disabled={isLoading} type="submit">
-                Add
-            </Button>
-        </form>
-    </ Modal>
+    <div> 
+    <Toaster 
+        toastOptions={{
+            success: {
+            iconTheme: {
+                primary: '#D0D0D0',
+                secondary: '#03C03C',
+            },
+            style: {
+                background: '#C8C8C8',
+            }
+            },
+        }}
+    />
+        <Modal 
+            title='Add a Collection' 
+            description='Name your collection' 
+            isOpen={postModal.isOpen} 
+            onChange={onChange}
+        >
+            <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col gap-y-4'>
+                <Input id='title' disabled={isLoading} {...register('title', { required: true })} placeholder='Collection Title' />
+                <Button disabled={isLoading} type="submit">
+                    Add
+                </Button>
+            </form>
+        </ Modal>
+    </div>  
   )
 }
 
