@@ -20,7 +20,7 @@ function Library() {
         fetch('http://127.0.0.1:5555/api/1/collections')
         .then(r => r.json())
         .then(setCollections)
-    }, [collections])
+    }, [])
 
     function handleClick(id) {
         event.preventDefault();
