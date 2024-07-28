@@ -52,7 +52,7 @@ function Library() {
                     Your Collections
                 </p>
             </div>
-            <RxCaretLeft onClick={handleBack} size={30} className='text-neutral-600 cursor-pointer hover:text-neutral-300 transition'/>
+            <RxCaretLeft onClick={handleBack} size={30} className='text-neutral-500 cursor-pointer hover:text-neutral-300 transition'/>
         </div>
         <div className='flex flex-col gap-y-2 mt-4 px-3 text-2xl'>
             {viewSpots ? spotsList : collection_list}
