@@ -29,7 +29,7 @@ function SpotPage() {
         <div className='mt-30'>
           <div className='flex flex-col md:flex-row items-center gap-x-5'>
             <div className='lg:h-60 lg:w-60 flex-shrink-0'>
-              <img fill alt='Spot' className='object-cover h-60 w-60 rounded-lg' src={spot.image}/>
+              <img alt='Spot' className='object-cover h-60 w-60 rounded-lg' src={spot.image}/>
               <h2 className='text-2xl text-neutral-700 semi-bold mt-4'>Address:</h2>
               <p className='text-xl text-neutral-100'>{spot.address}</p>
             </div>

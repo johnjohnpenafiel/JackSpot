@@ -34,8 +34,7 @@ function CollectionPage() {
   }, [collectionId, collections]);
 
     // Callback function to add the new spot to the collection state
-    const handleSpotAdded = (newSpot) => { setCollection((prevCollection) => ({...prevCollection, spots: [newSpot, ...prevCollection.spots]}));
-    };
+  const handleSpotAdded = (newSpot) => { setCollection((prevCollection) => ({...prevCollection, spots: [newSpot, ...prevCollection.spots]}))};
 
   if (!collection) {
     return ( 
@@ -44,7 +43,6 @@ function CollectionPage() {
       </div>
     )
   }
-
 
   const sortedSpots = collection.spots.slice().sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
   const spotList = sortedSpots.map((spot) => <SpotItem key={spot.id} name={spot.name} type={spot.type} id={spot.id} />)
