@@ -2,7 +2,6 @@
 
 import React from "react"
 import { HiCollection } from "react-icons/hi";
-import { RxCaretLeft } from 'react-icons/rx';
 import { AiOutlinePlus } from "react-icons/ai";
 
 
@@ -35,7 +34,6 @@ function Library() {
                     Your Collections
                 </p>
             </div>
-            <RxCaretLeft onClick={() => {}} size={29} className='text-neutral-500 cursor-pointer hover:text-neutral-300 transition'/>
             <AiOutlinePlus onClick={handleModalCLick} size={20} className='text-neutral-500 cursor-pointer hover:text-neutral-300 transition'/>
         </div>
         <div className='flex flex-col gap-y-2 mt-4 px-3 text-2xl'>
@@ -46,3 +44,9 @@ function Library() {
 }
 
 export default Library
+
+
+/*
+Back button
+<RxCaretLeft onClick={() => {}} size={29} className='text-neutral-500 cursor-pointer hover:text-neutral-300 transition'/>
+*/
