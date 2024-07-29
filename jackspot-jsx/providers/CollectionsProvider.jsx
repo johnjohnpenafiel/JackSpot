@@ -7,10 +7,6 @@ export const CollectionsContext = createContext();
 export const CollectionsProvider =  ({ children }) => {
     const [collections, setCollections] = useState([]);
 
-    useEffect(() => {
-        fetchCollections();
-    }, []);
-
     const fetchCollections = async () => {
         try {
             const response = await fetch('http://127.0.0.1:5555/api/1/collections'); // USER_ID = 1 or any
@@ -22,6 +18,10 @@ export const CollectionsProvider =  ({ children }) => {
         }
     };
 
+    useEffect(() => {
+        fetchCollections();
+    }, []);
+
     const addCollection = (newCollection) => {
         setCollections((prevCollections) => [...prevCollections, newCollection]);
         fetchCollections();
@@ -29,7 +29,7 @@ export const CollectionsProvider =  ({ children }) => {
 
     return (
 
-        <CollectionsContext.Provider value={{ collections, addCollection }}>
+        <CollectionsContext.Provider value={{ collections, addCollection, fetchCollections }}>
             {children}
         </CollectionsContext.Provider>
 

@@ -15,7 +15,7 @@ import ModalSProvider from '@/providers/ModalSProvider';
 function CollectionPage() {
   
   const { collectionId } = useParams();
-  const { collections } = useCollections();
+  const { collections, fetchCollections } = useCollections();
   const postModal = usePostSpotModal();
   
   const [collection, setCollection] = useState(null);
@@ -23,6 +23,10 @@ function CollectionPage() {
   function handleModalCLick() {
     return postModal.onOpen()
   }
+
+  useEffect(() => {
+    fetchCollections();
+  }, [fetchCollections]);
 
   useEffect(() => {
     const fetchedCollection = collections.find((collection) => collection.id === parseInt(collectionId, 10));

@@ -5,6 +5,7 @@ import { useState } from 'react'
 import { useForm } from "react-hook-form"
 import { toast, Toaster } from "react-hot-toast"
 import { useRouter } from 'next/navigation';
+import { useParams } from 'next/navigation';
 
 import Modal from './Modal'
 import usePostSpotModal from '@/hooks/usePostSpotModal'
@@ -15,6 +16,7 @@ function PostSModal({ onSpotAdded }) {
 
     const [isLoading, setIsLoading] = useState(false);
 
+    const { collectionId } = useParams();
     const postSpotModal = usePostSpotModal();
     const router = useRouter();
 
@@ -51,7 +53,7 @@ function PostSModal({ onSpotAdded }) {
                 collection_id: 1
             };
 
-            const response = await fetch('http://127.0.0.1:5555/api/collection/1', {
+            const response = await fetch(`http://127.0.0.1:5555/api/collection/${collectionId}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
