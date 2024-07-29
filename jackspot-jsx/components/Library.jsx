@@ -6,7 +6,7 @@ import { AiOutlinePlus } from "react-icons/ai";
 
 
 import CollectionItem from './CollectionItem';
-import usePostModal from "@/hooks/usePostModal";
+import usePostModal from "@/hooks/usePostCollectionModal";
 import { useCollections } from '@/hooks/useCollections';
 
 function Library() {

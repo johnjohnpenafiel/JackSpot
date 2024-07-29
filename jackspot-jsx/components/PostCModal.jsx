@@ -7,16 +7,16 @@ import { toast, Toaster } from "react-hot-toast"
 import { useRouter } from 'next/navigation';
 
 import Modal from './Modal'
-import usePostModal from '@/hooks/usePostModal'
+import usePostCollectionModal from '@/hooks/usePostCollectionModal'
 import Input from './Input';
 import Button from './Button';
 import { useCollections } from '@/hooks/useCollections';
 
-function PostCollectionModal() {
+function PostCModal() {
 
     const [isLoading, setIsLoading] = useState(false);
 
-    const postCollectionModal = usePostModal();
+    const postCollectionModal = usePostCollectionModal();
     const { addCollection } = useCollections();
     const router = useRouter();
 
@@ -95,4 +95,4 @@ function PostCollectionModal() {
   )
 }
 
-export default PostCollectionModal;
+export default PostCModal;

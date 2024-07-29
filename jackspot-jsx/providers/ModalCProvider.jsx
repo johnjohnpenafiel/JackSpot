@@ -3,7 +3,7 @@
 import React from "react"
 import { useState, useEffect } from "react"
 
-import PostCollectionModal from "@/components/PostCollectionModal"
+import PostCollectionModal from "@/components/PostCModal"
 
 
 function ModalCProvider() {

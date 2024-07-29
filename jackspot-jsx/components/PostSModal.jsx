@@ -7,15 +7,15 @@ import { toast, Toaster } from "react-hot-toast"
 import { useRouter } from 'next/navigation';
 
 import Modal from './Modal'
-import usePostModal from '@/hooks/usePostModal'
+import usePostSpotModal from '@/hooks/usePostSpotModal'
 import Input from './Input';
 import Button from './Button';
 
-function PostSpotModal() {
+function PostSModal() {
 
     const [isLoading, setIsLoading] = useState(false);
 
-    const postSpotModal = usePostModal();
+    const postSpotModal = usePostSpotModal();
     const router = useRouter();
 
     const { register, handleSubmit, reset} = useForm({
@@ -108,4 +108,4 @@ function PostSpotModal() {
   )
 }
 
-export default PostSpotModal;
+export default PostSModal;

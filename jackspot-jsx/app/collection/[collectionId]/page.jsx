@@ -1,5 +1,3 @@
-// src/app/collection/[collectionId]/page.jsx
-
 'use client';
 
 import React, { useState, useEffect } from 'react';
@@ -10,14 +8,15 @@ import { AiOutlinePlus } from "react-icons/ai";
 
 import Header from '@/components/Header';
 import SpotItem from '@/components/SpotItem';
-import usePostModal from "@/hooks/usePostModal";
+import usePostSpotModal from "@/hooks/usePostSpotModal";
 import ModalSProvider from '@/providers/ModalSProvider';
+
 
 function CollectionPage() {
   
   const { collectionId } = useParams();
   const { collections } = useCollections();
-  const postModal = usePostModal();
+  const postModal = usePostSpotModal();
   
   const [collection, setCollection] = useState(null);
 

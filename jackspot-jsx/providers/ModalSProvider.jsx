@@ -3,7 +3,7 @@
 import React from "react"
 import { useState, useEffect } from "react"
 
-import PostSpotModal from "@/components/PostSpotModal"
+import PostSpotModal from "@/components/PostSModal"
 
 
 function ModalSProvider() {
