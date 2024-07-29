@@ -29,6 +29,10 @@ function CollectionPage() {
     setCollection(fetchedCollection);
   }, [collectionId, collections]);
 
+    // Callback function to add the new spot to the collection state
+    const handleSpotAdded = (newSpot) => { setCollection((prevCollection) => ({...prevCollection, spots: [newSpot, ...prevCollection.spots]}));
+    };
+
   if (!collection) {
     return ( 
       <div className="bg-neutral-400 rounded-lg h-full w-full overflow-hidden overflow-y-auto">
@@ -37,7 +41,9 @@ function CollectionPage() {
     )
   }
 
-  const spotList = collection.spots.map((spot) => <SpotItem key={spot.id} name={spot.name} type={spot.type} id={spot.id} />)
+
+  const sortedSpots = collection.spots.slice().sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
+  const spotList = sortedSpots.map((spot) => <SpotItem key={spot.id} name={spot.name} type={spot.type} id={spot.id} />)
 
   return (
     <div className="bg-neutral-400 rounded-lg h-full w-full overflow-hidden overflow-y-auto">
@@ -46,7 +52,7 @@ function CollectionPage() {
           <h1 className='text-white text-4xl sm:text-5xl lg:text-7xl font-bold' >
             {collection.title}
           </h1>
-          <ModalSProvider />
+          <ModalSProvider onSpotAdded={handleSpotAdded} />
           <AiOutlinePlus onClick={handleModalCLick} size={60} className='text-neutral-500/60 cursor-pointer mt-3 hover:text-neutral-300 transition'/>
         </div>
       </Header>

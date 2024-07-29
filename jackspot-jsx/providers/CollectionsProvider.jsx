@@ -13,9 +13,10 @@ export const CollectionsProvider =  ({ children }) => {
 
     const fetchCollections = async () => {
         try {
-            const response = await fetch('http://127.0.0.1:5555/api/1/collections');
+            const response = await fetch('http://127.0.0.1:5555/api/1/collections'); // USER_ID = 1 or any
             const data = await response.json();
             setCollections(data);
+
         } catch (error) {
             console.error('Error fetching collections:', error);
         }
@@ -27,8 +28,10 @@ export const CollectionsProvider =  ({ children }) => {
     };
 
     return (
+
         <CollectionsContext.Provider value={{ collections, addCollection }}>
             {children}
         </CollectionsContext.Provider>
+
     );
 };

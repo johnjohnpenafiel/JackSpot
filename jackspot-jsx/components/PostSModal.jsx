@@ -11,7 +11,7 @@ import usePostSpotModal from '@/hooks/usePostSpotModal'
 import Input from './Input';
 import Button from './Button';
 
-function PostSModal() {
+function PostSModal({ onSpotAdded }) {
 
     const [isLoading, setIsLoading] = useState(false);
 
@@ -61,10 +61,14 @@ function PostSModal() {
 
             if (!response.ok) {
                 throw new Error('Network response was not ok');
-            }
+            };
 
             const responseData = await response.json();
             console.log('Response data:', responseData);
+
+            if (onSpotAdded) {
+                onSpotAdded(responseData);
+            };
 
 
             router.refresh();

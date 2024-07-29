@@ -6,7 +6,7 @@ import { useState, useEffect } from "react"
 import PostSpotModal from "@/components/PostSModal"
 
 
-function ModalSProvider() {
+function ModalSProvider({onSpotAdded}) {
 
     const [isMounted, setIsMounted] = useState(false)
 
@@ -20,7 +20,7 @@ function ModalSProvider() {
 
   return (
     <>
-        <PostSpotModal />
+        <PostSpotModal onSpotAdded={onSpotAdded} />
     </>
   )
 }
