@@ -6,7 +6,7 @@ import Link from 'next/link';
 function SpotItem({ id, name, type }){
 
   return (
-
+    
     <Link href={`/spots/${id}`} key={id} >
     <div className='flex items-center gap-x-3 cursor-pointer hover:bg-neutral-300/50 w-full p-2 rounded-md'>
       <div className='flex flex-col gap-y-1 overflow-hidden'>
@@ -15,7 +15,6 @@ function SpotItem({ id, name, type }){
       </div>
     </div>
     </Link>
-
   )
 }
 

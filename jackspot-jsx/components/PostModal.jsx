@@ -10,7 +10,7 @@ import Modal from './Modal'
 import usePostModal from '@/hooks/usePostModal'
 import Input from './Input';
 import Button from './Button';
-import useCollections from '@/hooks/useCollections';
+import { useCollections } from '@/hooks/useCollections';
 
 function PostModal() {
 

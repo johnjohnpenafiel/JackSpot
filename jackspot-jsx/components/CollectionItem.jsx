@@ -1,22 +1,21 @@
 'use client';
 
-import { useRouter } from 'next/navigation'
 import React from 'react'
+import Link from 'next/link'
 
 
-function CollectionList({ title }) {
-
-    const router = useRouter();
-    
+function CollectionItem({ title, id }) {
   return (
-    <div onClick={() => {}} className='flex items-center gap-x-3 cursor-pointer hover:bg-neutral-300/50 w-full p-2 rounded-md'>
+    <Link href={`/collection/${id}`} key={id}>
+    <div className='flex items-center gap-x-3 cursor-pointer hover:bg-neutral-300/50 w-full p-2 rounded-md'>
       <div className='flex flex-col gap-y-1 overflow-hidden'>
         <p className='text-neutral-600 truncate'>
           {title}
         </p>
       </div>
     </div>
+    </Link>
   )
 }
 
-export default CollectionList;
+export default CollectionItem;

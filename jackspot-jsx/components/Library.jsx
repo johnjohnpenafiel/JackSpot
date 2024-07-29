@@ -7,7 +7,7 @@ import { AiOutlinePlus } from "react-icons/ai";
 
 import CollectionItem from './CollectionItem';
 import usePostModal from "@/hooks/usePostModal";
-import useCollections from '@/hooks/useCollections';
+import { useCollections } from '@/hooks/useCollections';
 
 function Library() {
 
@@ -17,6 +17,10 @@ function Library() {
 
     function handleModalCLick() {
         return postModal.onOpen()
+    }
+
+    function handleCollectionClick() {
+
     }
    
     const collection_list = collections.map((collection) => (

@@ -2,8 +2,7 @@
 import { useContext } from 'react';
 import { CollectionsContext } from '@/providers/CollectionsProvider';
 
-const useCollections = () => {
+export const useCollections = () => {
     return useContext(CollectionsContext);
 };
 
-export default useCollections;
