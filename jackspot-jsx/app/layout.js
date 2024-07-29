@@ -3,6 +3,7 @@ import "./globals.css";
 
 import Sidebar from "@/components/sidebar";
 import ModalProvider from "@/providers/ModalProvider";
+import { CollectionsProvider } from "@/providers/CollectionsProvider";
 
 const font = Figtree({ subsets: ["latin"] });
 
@@ -15,10 +16,12 @@ function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={font.className}>
+        <CollectionsProvider>
         <ModalProvider />
         <Sidebar>
           {children}
         </Sidebar>
+        </CollectionsProvider>
       </body>
     </html>
   );

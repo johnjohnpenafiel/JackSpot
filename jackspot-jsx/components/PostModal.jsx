@@ -10,12 +10,14 @@ import Modal from './Modal'
 import usePostModal from '@/hooks/usePostModal'
 import Input from './Input';
 import Button from './Button';
+import useCollections from '@/hooks/useCollections';
 
 function PostModal() {
 
     const [isLoading, setIsLoading] = useState(false);
 
     const postModal = usePostModal();
+    const { addCollection } = useCollections();
     const router = useRouter();
 
     const { register, handleSubmit, reset} = useForm({
@@ -52,9 +54,10 @@ function PostModal() {
                 throw new Error('Network response was not ok');
             }
 
-            const data = await response.json();
+            const newCollection = await response.json();
+            addCollection(newCollection);
 
-            console.log('Submission successful', data);
+
             
             router.refresh();
             setIsLoading(false);
@@ -73,17 +76,7 @@ function PostModal() {
     return (
     <div> 
     <Toaster 
-        toastOptions={{
-            success: {
-            iconTheme: {
-                primary: '#D0D0D0',
-                secondary: '#03C03C',
-            },
-            style: {
-                background: '#C8C8C8',
-            }
-            },
-        }}
+        toastOptions={{ success: { iconTheme: { primary: '#D0D0D0', secondary: '#03C03C'}, style: {background: '#C8C8C8'}}}}
     />
         <Modal 
             title='Add a Collection' 
