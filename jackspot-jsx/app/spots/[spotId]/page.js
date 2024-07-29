@@ -1,9 +1,9 @@
 'use client'
 
-import Image from 'next/image'
 
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'next/navigation'; // Use next/navigation for useParams
+
 import Header from '@/components/Header';
 
 
@@ -11,6 +11,7 @@ function SpotPage() {
   
   const { spotId } = useParams(); // Get the spotId from the URL params
   const [spot, setSpot] = useState('');
+
 
   useEffect(() => {
     if (spotId) {
@@ -36,14 +37,13 @@ function SpotPage() {
               <p className='hidden md:block font-semibold text-neutral-600 text-xl'>
                 {spot.type}
               </p>
-              <h1 className='text-neutral -900 text-4xl sm:text-5xl lg:text-7xl font-bold' >
+              <h1 className='text-white text-4xl sm:text-5xl lg:text-7xl font-bold' >
                 {spot.name}
               </h1>
             </div>
           </div>
         </div>
       </Header>
-      
     </div>
   );
 };

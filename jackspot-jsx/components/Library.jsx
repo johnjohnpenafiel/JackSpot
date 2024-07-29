@@ -34,13 +34,13 @@ function Library() {
         <div className='flex items-center justify-between px-5 pt-4 sticky top-0 bg-neutral-400'>
             <div className='inline-flex items-center gap-x-2'>
                 <HiCollection className='text-neutral-700' size={23} />
-                <p className='text-neutral-700 font-medium text-md'>
+                <p className='text-neutral-700 font-medium text-base'>
                     Your Collections
                 </p>
             </div>
             <AiOutlinePlus onClick={handleModalCLick} size={20} className='text-neutral-500 cursor-pointer hover:text-neutral-300 transition'/>
         </div>
-        <div className='flex flex-col gap-y-2 mt-4 px-3 text-2xl'>
+        <div className='flex flex-col gap-y-2 mt-4 ml-1 px-3 text-2xl'>
             {collection_list}
         </div>
     </div>

@@ -3,10 +3,10 @@
 import React from "react"
 import { useState, useEffect } from "react"
 
-import PostModal from "@/components/PostModal"
+import PostCollectionModal from "@/components/PostCollectionModal"
 
 
-function ModalProvider() {
+function ModalCProvider() {
 
     const [isMounted, setIsMounted] = useState(false)
 
@@ -20,9 +20,9 @@ function ModalProvider() {
 
   return (
     <>
-        <PostModal />
+        <PostCollectionModal />
     </>
   )
 }
 
-export default ModalProvider
+export default ModalCProvider

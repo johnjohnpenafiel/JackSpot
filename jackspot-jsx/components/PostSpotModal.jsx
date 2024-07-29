@@ -1,4 +1,4 @@
-'useClient';
+'use client';
 
 import React from 'react'
 import { useState } from 'react'
@@ -10,26 +10,29 @@ import Modal from './Modal'
 import usePostModal from '@/hooks/usePostModal'
 import Input from './Input';
 import Button from './Button';
-import { useCollections } from '@/hooks/useCollections';
 
-function PostModal() {
+function PostSpotModal() {
 
     const [isLoading, setIsLoading] = useState(false);
 
-    const postModal = usePostModal();
-    const { addCollection } = useCollections();
+    const postSpotModal = usePostModal();
     const router = useRouter();
 
     const { register, handleSubmit, reset} = useForm({
         defaultValues: {
-            title: ''
+            name: '',
+            type: '',
+            address: '',
+            comment: '',
+            review: '',
+            image: ''
         }
     })
 
     function onChange(open) {
         if (!open) {
             reset();
-            postModal.onClose();
+            postSpotModal.onClose();
         }
     }
 
@@ -38,11 +41,17 @@ function PostModal() {
             setIsLoading(true);
 
             const payload = {
-                title: values.title,
-                user_id: 1
+                name: values.name,
+                type: values.type,
+                address: values.address,
+                comment: values.comment,
+                review: values.review,
+                image: values.image,
+                user_id: 1,
+                collection_id: 1
             };
 
-            const response = await fetch('http://127.0.0.1:5555/api/1/collections', {
+            const response = await fetch('http://127.0.0.1:5555/api/collection/1', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -54,16 +63,15 @@ function PostModal() {
                 throw new Error('Network response was not ok');
             }
 
-            const newCollection = await response.json();
-            addCollection(newCollection);
+            const responseData = await response.json();
+            console.log('Response data:', responseData);
 
 
-            
             router.refresh();
             setIsLoading(false);
-            toast.success('Collection created');
+            toast.success('Spot added');
             reset();
-            postModal.onClose();
+            postSpotModal.onClose();
 
 
         } catch (error) {
@@ -79,13 +87,18 @@ function PostModal() {
         toastOptions={{ success: { iconTheme: { primary: '#D0D0D0', secondary: '#03C03C'}, style: {background: '#C8C8C8'}}}}
     />
         <Modal 
-            title='Add a Collection' 
-            description='Name your collection' 
-            isOpen={postModal.isOpen} 
+            title='Add a Spot' 
+            description='Complete the form' 
+            isOpen={postSpotModal.isOpen} 
             onChange={onChange}
         >
             <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col gap-y-4'>
-                <Input id='title' disabled={isLoading} {...register('title', { required: true })} placeholder='Collection Title' />
+                <Input id='name' disabled={isLoading} {...register('name', { required: true })} placeholder='Name' />
+                <Input id='type' disabled={isLoading} {...register('type', { required: true })} placeholder='Category'/>
+                <Input id='address' disabled={isLoading} {...register('address', { required: false })} placeholder='Address'/>
+                <Input id='comment' disabled={isLoading} {...register('comment', { required: false })} placeholder='Comment'/>
+                <Input id='review' disabled={isLoading} {...register('review', { required: false })} placeholder='Review'/>
+                <Input id='image' disabled={isLoading} {...register('image', { required: false })} placeholder='Image Link'/>
                 <Button disabled={isLoading} type="submit">
                     Add
                 </Button>
@@ -95,4 +108,4 @@ function PostModal() {
   )
 }
 
-export default PostModal
+export default PostSpotModal;
