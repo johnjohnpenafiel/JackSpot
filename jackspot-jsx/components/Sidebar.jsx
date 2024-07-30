@@ -4,7 +4,7 @@ import { usePathname } from "next/navigation";
 import { useMemo } from "react";
 import { HiHome } from "react-icons/hi";
 import { BiSearch } from "react-icons/bi";
-import { IoShareSocial } from "react-icons/io5";
+import { IoMdShareAlt } from "react-icons/io";
 
 import Box from "./Box";
 import SidebarItem from "./SidebarItem";
@@ -30,7 +30,7 @@ function Sidebar ({children}) {
             href: '/search',
         },
         {
-            icon: IoShareSocial,
+            icon: IoMdShareAlt,
             label: 'Share',
             active: pathname === '/share',
             href: '/share',

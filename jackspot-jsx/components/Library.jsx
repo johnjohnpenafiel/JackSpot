@@ -40,7 +40,7 @@ function Library() {
             </div>
             <AiOutlinePlus onClick={handleModalCLick} size={20} className='text-neutral-500 cursor-pointer hover:text-neutral-300 transition'/>
         </div>
-        <div className='flex flex-col gap-y-2 mt-4 ml-1 px-3 text-2xl'>
+        <div className='flex flex-col gap-y-2 mt-4 ml-2 px-3 text-2xl'>
             {collection_list}
         </div>
     </div>

@@ -6,22 +6,31 @@ import { useParams } from 'next/navigation'; // Use next/navigation for useParam
 
 import Header from '@/components/Header';
 
-
 function SpotPage() {
   
   const { spotId } = useParams(); // Get the spotId from the URL params
-  const [spot, setSpot] = useState('');
+  const [spot, setSpot] = useState(undefined);
 
 
   useEffect(() => {
     if (spotId) {
+
       fetch(`http://127.0.0.1:5555/api/collection/spot/${spotId}`)
         .then(response => response.json())
         .then(setSpot)
-        }
+   
+        } 
   }, [spotId]);
 
+  if (!spot) {
+    return (
+      <div className="bg-neutral-400 rounded-lg h-full w-full overflow-hidden overflow-y-auto">
+        <Header />
+      </div>
+    )
+  }
 
+  
   return (
 
     <div className="bg-neutral-400 rounded-lg h-full w-full  overflow-hidden overflow-y-auto transition">
