@@ -24,14 +24,14 @@ function Header({ children, className }) {
             <div className='hidden md:flex gap-x-2 items-center'>
                 {/* Back button */}
                 <button 
-                    className='rounded-full bg-neutral-400 flex items-center justify-center transition'
+                    className='rounded-full flex items-center justify-center transition'
                     onClick={()=> router.back()}
                 >
                     <RxCaretLeft className='text-neutral-500 hover:text-neutral-300' size={35} />
                 </button>
                 {/* Foward button */}
                 <button
-                    className='rounded-full bg-neutral-400 flex items-center justify-center transition' 
+                    className='rounded-full flex items-center justify-center transition' 
                     onClick={()=> router.forward()}
                 >
                     <RxCaretRight className='text-neutral-500 hover:text-neutral-300' size={35} />
