@@ -61,7 +61,7 @@ function CollectionPage() {
         <h3 className='text-neutral-600/75 semi-bold text-xl mt-1 flex flex-col gap-y-2 px-3'>Collection</h3>
       </Header>
       <div className=" md:flex flex-col gap-y-2 w-[500px] h-[655px] ml-5 p-2" >
-        <Box className='overflow-y-auto bg-neutral-500/25 px-2 py-3'>
+        <Box className='overflow-y-auto bg-neutral-500/20 px-2 py-3'>
           <div className='flex flex-col gap-y-2 px-3 text-2xl'>
             {(spotList.length < 1) ? <h1 className='text-neutral-500'>This Collection is empty</h1> : spotList}
           </div>
