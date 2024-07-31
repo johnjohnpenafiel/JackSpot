@@ -18,10 +18,6 @@ function Library() {
     function handleModalCLick() {
         return postModal.onOpen()
     }
-
-    function handleCollectionClick() {
-
-    }
    
     const collection_list = collections.map((collection) => (
         <CollectionItem key={collection.id} id={collection.id} title={collection.title} />
@@ -38,7 +34,7 @@ function Library() {
                     Your Collections
                 </p>
             </div>
-            <AiOutlinePlus onClick={handleModalCLick} size={20} className='text-neutral-500 cursor-pointer hover:text-neutral-300 transition'/>
+            <AiOutlinePlus title='Add a Collection' onClick={handleModalCLick} size={20} className='text-neutral-500 cursor-pointer hover:text-neutral-300 transition'/>
         </div>
         <div className='flex flex-col gap-y-2 mt-4 ml-2 px-3 text-2xl'>
             {collection_list}

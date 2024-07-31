@@ -7,6 +7,8 @@ import { RxCaretLeft, RxCaretRight } from 'react-icons/rx';
 import { HiHome } from 'react-icons/hi';
 import { BiSearch } from 'react-icons/bi';
 
+import Link from 'next/link';
+
 
 // import Button from './Button';
 
@@ -27,25 +29,29 @@ function Header({ children, className }) {
                     className='rounded-full flex items-center justify-center transition'
                     onClick={()=> router.back()}
                 >
-                    <RxCaretLeft className='text-neutral-500 hover:text-neutral-300' size={35} />
+                    <RxCaretLeft title='Go back' className='text-neutral-500 hover:text-neutral-300' size={35} />
                 </button>
                 {/* Foward button */}
                 <button
                     className='rounded-full flex items-center justify-center transition' 
                     onClick={()=> router.forward()}
                 >
-                    <RxCaretRight className='text-neutral-500 hover:text-neutral-300' size={35} />
+                    <RxCaretRight title='Go foward' className='text-neutral-500 hover:text-neutral-300' size={35} />
                 </button>
             </div>
             <div className= 'flex md:hidden gap-x-2 items-center'>
                 {/* Home Mobil view */}
-                <button className='rounded-full p-2 bg-white flex items-center justify-center hover:opacity-75 transition'>
-                    <HiHome className='text-black' size={20} />
+                <Link href='/'>
+                <button className='rounded-full p-2 bg-neutral-500 flex items-center justify-center hover:opacity-75 transition'>
+                    <HiHome className='text-neutral-300' size={20} />
                 </button>
+                </Link>
                 {/* Search Mobil view */}
-                <button className='rounded-full p-2 bg-white flex items-center justify-center hover:opacity-75 transition'>
-                    <BiSearch className='text-black' size={20} />
+                <Link href='/search'>
+                <button className='rounded-full p-2 bg-neutral-500 flex items-center justify-center hover:opacity-75 transition'>
+                    <BiSearch className='text-neutral-300' size={20} />
                 </button>
+                </Link>
             </div>
         </div>
         {children}

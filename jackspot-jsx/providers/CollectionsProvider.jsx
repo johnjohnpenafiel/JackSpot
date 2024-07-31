@@ -31,7 +31,7 @@ export const CollectionsProvider =  ({ children }) => {
 
     return (
 
-        <CollectionsContext.Provider value={{ collections, addCollection, fetchCollections }}>
+        <CollectionsContext.Provider value={{ collections, setCollections, addCollection, fetchCollections }}>
             {children}
         </CollectionsContext.Provider>
 
