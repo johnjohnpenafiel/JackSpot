@@ -63,7 +63,7 @@ function CollectionPage() {
           <h1 className='text-white text-8xl sm:text-5xl lg:text-7xl font-bold mt-5' >
             {collection.title}
           </h1>
-          <FaPlus title='Add a Spot' onClick={handleModalCLick} size={50} className='text-neutral-500/60 cursor-pointer mt-7 ml-2 hover:text-neutral-300/80 hover:scale-110 transition'/>
+          <FaPlus title='Add a Spot' onClick={handleModalCLick} size={50} className='text-neutral-500/50 cursor-pointer mt-7 ml-2 hover:text-neutral-300/80 hover:scale-110 transition'/>
         </div>
         <div className='items-center gap-x-2'>
           <h3 className='text-neutral-600/75 semi-bold text-xl mt-1 flex flex-col px-2'>

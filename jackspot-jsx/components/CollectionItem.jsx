@@ -11,12 +11,12 @@ function CollectionItem({ title, id }) {
     <div className='relative group flex items-center gap-x-3 cursor-pointer hover:bg-neutral-300/35 w-full p-2 rounded-md '>
       <Link href={`/collection/${id}`} key={id} className='flex-grow'>
         <div className='flex gap-y-1 overflow-hidden items-center'>
-          <p className='text-neutral-600/90 text-wrap font-sans'>
+          <p className='text-neutral-600/90 text-wrap font-light font-sans'>
             {title}
           </p>
         </div>
       </Link>
-      <div className='absolute transition text-neutral-500/75 opacity-0 rounded-full items-center drop-shadow-md right-7 group-hover:opacity-100 hover:scale-125 hover:text-neutral-300/80'>
+      <div className='absolute transition text-neutral-500/75 opacity-0 rounded-full items-center drop-shadow-md right-8 group-hover:opacity-100 hover:scale-125 hover:text-neutral-300/80'>
           <FaMinus title='Delete Spot' size={20}/>
       </div>
     </div>

@@ -21,7 +21,7 @@ function SearchContent({ filteredSpots }) {
                 </div>
             ))
           ) : (
-            <div className="text-center ml-10 text-gray-600">No spots found</div>
+            <div className="text-center text-gray-600">No spots found</div>
           )}
         </div>
       )

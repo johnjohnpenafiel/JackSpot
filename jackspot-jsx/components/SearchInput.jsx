@@ -12,7 +12,7 @@ function SearchInput({ setSearchTerm }) {
 
     return (
         
-     <Input className='bg-neutral-500'type='text' placeholder="Search spots by name or type..." onChange={handleChange} />
+     <Input className='bg-neutral-500/75 text-white' type='text' placeholder="Search spots by name or type..." onChange={handleChange} />
        
   )
 }
