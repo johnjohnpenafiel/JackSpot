@@ -4,6 +4,7 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 
 import Header from '@/components/Header'
+import Box from '@/components/Box'
 import SearchInput from '@/components/SearchInput'
 import { useCollections } from '@/hooks/useCollections'
 
@@ -37,8 +38,10 @@ function Search() {
               <SearchInput setSearchTerm={setSearchTerm}/>
             </div>
         </Header>
-        <div>
-          <SearchContent filteredSpots={filteredCollections}/>
+        <div className=" md:flex flex-col gap-y-2 w-full h-[655px]">
+          <Box className='overflow-y-auto px-2 py-3'>
+            <SearchContent filteredSpots={filteredCollections}/>
+          </Box>
         </div>
     </div>
   )
