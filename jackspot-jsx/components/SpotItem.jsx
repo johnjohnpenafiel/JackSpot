@@ -29,8 +29,8 @@ function SpotItem({ id, name, type, deleteCollection }){
         <p className='text-neutral-500 text-sm truncate'>{type}</p>
       </div>
       </Link>
-      <div className='absolute transition text-neutral-500/65 opacity-0 rounded-full flex items-center p-4 drop-shadow-md right-5 group-hover:opacity-100 hover:scale-125'>
-      <FaMinus title='Delete spot' onClick={handleDelete}/>
+      <div className='absolute transition text-neutral-500/75 opacity-0 rounded-full flex items-center p-4 drop-shadow-md right-5 group-hover:opacity-100 hover:scale-125 hover:text-neutral-300/80'>
+      <FaMinus title='Delete Spot' onClick={handleDelete}/>
       </div>
     </div>
   )

@@ -38,8 +38,8 @@ function Search() {
               <SearchInput setSearchTerm={setSearchTerm}/>
             </div>
         </Header>
-        <div className=" md:flex flex-col gap-y-2 w-full h-[655px]">
-          <Box className='overflow-y-auto px-2 py-3'>
+        <div className=" md:flex flex-col gap-y-2 w-full h-[685px] -mt-3">
+          <Box className='overflow-y-auto px-2'>
             <SearchContent filteredSpots={filteredCollections}/>
           </Box>
         </div>

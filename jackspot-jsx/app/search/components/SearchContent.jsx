@@ -3,7 +3,7 @@
 import React from 'react'
 
 import SpotItem from '@/components/SpotItem'
-import Box from '@/components/Box'
+
 
 
 function SearchContent({ filteredSpots }) {
@@ -15,7 +15,7 @@ function SearchContent({ filteredSpots }) {
             filteredSpots.map((collection) => 
             ( 
                 <div key={collection.id}>
-                    <div className="pl-4">
+                    <div className="">
                         {collection.spots.map((spot) => <SpotItem id={spot.id} name={spot.name} type={spot.type}/>)}
                     </div>
                 </div>

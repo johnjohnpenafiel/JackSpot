@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'next/navigation';
 import { useCollections } from '@/hooks/useCollections';
 
-import { AiOutlinePlus } from "react-icons/ai";
+import { FaPlus } from "react-icons/fa6";
 
 import Header from '@/components/Header';
 import SpotItem from '@/components/SpotItem';
@@ -63,12 +63,16 @@ function CollectionPage() {
           <h1 className='text-white text-8xl sm:text-5xl lg:text-7xl font-bold mt-5' >
             {collection.title}
           </h1>
-          <AiOutlinePlus title='Add a Spot' onClick={handleModalCLick} size={60} className='text-neutral-500/60 cursor-pointer mt-6 hover:text-neutral-300 transition'/>
+          <FaPlus title='Add a Spot' onClick={handleModalCLick} size={50} className='text-neutral-500/60 cursor-pointer mt-7 ml-2 hover:text-neutral-300/80 hover:scale-110 transition'/>
         </div>
-        <h3 className='text-neutral-600/75 semi-bold text-xl mt-1 flex flex-col gap-y-2 px-3'>Collection</h3>
+        <div className='items-center gap-x-2'>
+          <h3 className='text-neutral-600/75 semi-bold text-xl mt-1 flex flex-col px-2'>
+          Collection
+          </h3>
+        </div>
       </Header>
-      <div className="flex-col gap-y-2 w-[500px] h-[655px] ml-5 p-2" >
-        <Box className='flex-col overflow-y-auto bg-neutral-500/20 px-2 py-3'>
+      <div className="flex-col gap-y-2 w-[500px] h-[600px] ml-5 p-2" >
+        <Box className='overflow-y-auto bg-neutral-500/10 px-2 py-3'>
           <div className='flex flex-col gap-y-2 px-3 text-2xl'>
             {(spotList.length < 1) ? <h1 className='text-neutral-500'>This Collection is empty</h1> : spotList}
           </div>

@@ -11,8 +11,8 @@ function Modal({ isOpen, onChange, title, description, children}) {
 
     <Dialog.Root open={isOpen} defaultOpen={isOpen} onOpenChange={onChange}>
       <Dialog.Portal>
-          <Dialog.Overlay className='bg-neutral-400/50 backdrop-blur-sm fixed inset-0'/>
-          <Dialog.Content className='fixed drop-shadow-md border border-neutral-500 top-[50%] left-[50%] max-h-full h-full md:h-auto md:max-h-[85vh] w-full md:w-[90vw] md:max-w-[450px] translate-x-[-50%] translate-y-[-50%] rounded-md bg-neutral-600 p-[25px] focus:outline-none'>
+          <Dialog.Overlay className='bg-neutral-400/50 backdrop-blur-sm fixed inset-0 z-10'/>
+          <Dialog.Content className='fixed drop-shadow-md border border-neutral-500 top-[50%] left-[50%] max-h-full h-full md:h-auto md:max-h-[85vh] w-full md:w-[90vw] md:max-w-[450px] translate-x-[-50%] translate-y-[-50%] rounded-md bg-neutral-600 p-[25px] focus:outline-none z-20'>
             <Dialog.Title className='text-xl text-center font-bold mb-4'>
               {title}
             </Dialog.Title>
