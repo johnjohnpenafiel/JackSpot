@@ -16,7 +16,7 @@ function SearchContent({ filteredSpots }) {
             ( 
                 <div key={collection.id}>
                     <div className="">
-                        {collection.spots.map((spot) => <SpotItemSearch id={spot.id} name={spot.name} type={spot.type}/>)}
+                        {collection.spots.map((spot) => <SpotItemSearch key={spot.id} id={spot.id} name={spot.name} type={spot.type}/>)}
                     </div>
                 </div>
             ))
