@@ -12,7 +12,7 @@ function SpotItemSearch({ id, name, type }){
     <div className='relative group flex items-center gap-x-3 cursor-pointer hover:bg-neutral-300/25 w-full p-2 rounded-md'>
       <Link href={`/spots/${id}`} key={id} className='flex-grow flex flex-col gap-y-1 overflow-hidden'>
       <div className='flex flex-col gap-y-1 overflow-hidden'>
-        <p className='text-neutral-600 truncate'> {name}</p>
+        <p className='text-neutral-700 truncate'> {name}</p>
         <p className='text-neutral-500 text-sm truncate'>{type}</p>
       </div>
       </Link>

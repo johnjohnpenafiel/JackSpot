@@ -7,7 +7,7 @@ function SpotPageContent({ address, review, comment }) {
     if (!review){
       review = 1
     }
-    return '⭐️'.repeat(review);
+    return '★'.repeat(review);
   };
 
   function check(data){
