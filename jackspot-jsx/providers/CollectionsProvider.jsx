@@ -26,12 +26,26 @@ export const CollectionsProvider =  ({ children }) => {
 
     const addCollection = (newCollection) => {
         setCollections((prevCollections) => [...prevCollections, newCollection]);
-        fetchCollections();
     };
+
+    const addSpot = (newSpot) => {
+        setCollections(prevCollections => {
+            return prevCollections.map(collection => {
+                if (collection.id === newSpot.collection_id) {
+                    return {
+                        ...collection,
+                        spots: [newSpot, ...collection.spots]
+                    };
+                }
+                return collection;
+            });
+        });
+    };
+
 
     return (
 
-        <CollectionsContext.Provider value={{ collections, setCollections, addCollection, fetchCollections }}>
+        <CollectionsContext.Provider value={{ collections, setCollections, addCollection, fetchCollections, addSpot }}>
             {children}
         </CollectionsContext.Provider>
 

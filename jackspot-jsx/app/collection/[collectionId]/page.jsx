@@ -17,10 +17,8 @@ import Box from '@/components/Box';
 function CollectionPage() {
   
   const { collectionId } = useParams();
-  const { collections, fetchCollections } = useCollections();
+  const { collections, fetchCollections, addSpot } = useCollections();
   const postModal = usePostSpotModal();
-  const router = useRouter();
-  
   const [collection, setCollection] = useState(null);
 
   function handleModalCLick() {
@@ -43,8 +41,13 @@ function CollectionPage() {
     setCollection(fetchedCollection);
   }, [collectionId, collections]);
 
-    // Callback function to add the new spot to the collection state
-  const handleSpotAdded = (newSpot) => { setCollection((prevCollection) => ({...prevCollection, spots: [newSpot, ...prevCollection.spots]}))};
+  const handleSpotAdded = (newSpot) => {
+    setCollection((prevCollection) => ({
+      ...prevCollection,
+      spots: [newSpot, ...prevCollection.spots]
+    }));
+    addSpot(newSpot);
+  }; 
 
   if (!collection) {
     return ( 

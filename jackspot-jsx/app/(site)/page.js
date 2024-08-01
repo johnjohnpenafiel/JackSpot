@@ -11,9 +11,9 @@ import HomeContent from './components/HomeContent';
 function Home() {
   const { collections, fetchCollections } = useCollections();
   
-  useEffect(() => {
-    fetchCollections();
-  }, [fetchCollections]);
+  // useEffect(() => {
+  //   fetchCollections();
+  // }, [fetchCollections]);
 
   // Extract all spots from collections
   const allSpots = collections.flatMap(collection => collection.spots);
