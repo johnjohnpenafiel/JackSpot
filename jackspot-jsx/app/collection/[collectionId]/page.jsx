@@ -17,7 +17,7 @@ import Box from '@/components/Box';
 function CollectionPage() {
   
   const { collectionId } = useParams();
-  const { collections, fetchCollections, addSpot } = useCollections();
+  const { collections, fetchCollections, addSpot, deleteSpot } = useCollections();
   const postModal = usePostSpotModal();
   const [collection, setCollection] = useState(null);
 
@@ -30,6 +30,7 @@ function CollectionPage() {
       ...prevCollection,
       spots: prevCollection.spots.filter((spot) => spot.id !== spotId),
     }));
+    deleteSpot(spotId, collection.id); // Update the global state
   }
 
   useEffect(() => {

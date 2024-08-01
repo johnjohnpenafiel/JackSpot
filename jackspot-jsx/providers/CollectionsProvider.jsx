@@ -42,10 +42,24 @@ export const CollectionsProvider =  ({ children }) => {
         });
     };
 
+    const deleteSpot = (spotId, collectionId) => {
+        setCollections(prevCollections => {
+            return prevCollections.map(collection => {
+                if (collection.id === collectionId) {
+                    return {
+                        ...collection,
+                        spots: collection.spots.filter(spot => spot.id !== spotId)
+                    };
+                }
+                return collection;
+            });
+        });
+    };
+
 
     return (
 
-        <CollectionsContext.Provider value={{ collections, setCollections, addCollection, fetchCollections, addSpot }}>
+        <CollectionsContext.Provider value={{ collections, setCollections, addCollection, fetchCollections, addSpot, deleteSpot }}>
             {children}
         </CollectionsContext.Provider>
 
