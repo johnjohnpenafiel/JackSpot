@@ -2,23 +2,39 @@
 
 import React from 'react'
 import Link from 'next/link'
+import { useRouter, usePathname } from 'next/navigation';
 
 import { FaMinus } from "react-icons/fa6";
 
 
 function CollectionItem({ title, id, deleteCollection }) {
 
+  const router = useRouter();
+  const pathname = usePathname();
 
   function handleDelete(e) {
     e.stopPropagation();
+    console.log('Current Route:', pathname);
+    console.log('Collection ID:', id);
+
     fetch(`http://localhost:5555/api/collection/${id}`, {
       method: "DELETE",
     }).then((response) => {
       if (response.ok) {
+        console.log('Delete Successful');
+        deleteCollection();
+        if (pathname === `/collection/${id}`) {
+          console.log('Navigating to home');
+          router.push('/');
+        }
+      } else {
+        console.log('Delete Failed');
       }
-      deleteCollection();
+    }).catch((error) => {
+      console.error('Fetch Error:', error);
     });
   }
+
 
 
   return (
@@ -40,3 +56,22 @@ function CollectionItem({ title, id, deleteCollection }) {
 export default CollectionItem;
 
 // border-b-2 border-neutral-500/10
+
+/*
+
+function handleDelete(e) {
+    e.stopPropagation();
+    const currentRoute = router.pathname;
+    fetch(`http://localhost:5555/api/collection/${id}`, {
+      method: "DELETE",
+    }).then((response) => {
+      if (response.ok) {
+        deleteCollection();
+        if (currentRoute === `/collection/${id}`) {
+          router.push('/');
+        }
+      }
+    });
+  }
+
+*/
