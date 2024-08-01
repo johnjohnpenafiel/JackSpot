@@ -31,7 +31,7 @@ function CollectionItem({ title, id, deleteCollection }) {
         </div>
       </Link>
       <div className='absolute transition text-neutral-500/75 opacity-0 rounded-full items-center drop-shadow-md right-8 group-hover:opacity-100 hover:scale-125 hover:text-neutral-300/80'>
-          <FaMinus title='Delete Spot' size={20} onClick={handleDelete}/>
+          <FaMinus title='Delete Collection' size={20} onClick={handleDelete}/>
       </div>
     </div>
   )

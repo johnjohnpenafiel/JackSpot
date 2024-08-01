@@ -6,6 +6,8 @@ import { useParams } from 'next/navigation'; // Use next/navigation for useParam
 
 import Header from '@/components/Header';
 
+import SpotPageContent from '../components/SpotPageContent';
+
 function SpotPage() {
   
   const { spotId } = useParams(); // Get the spotId from the URL params
@@ -41,8 +43,6 @@ function SpotPage() {
               {(!spot.image ? null : 
                 <img alt='Spot' className='object-cover h-60 w-60 rounded-lg' src={spot.image}/>
               )}
-              {/* <h2 className='text-2xl text-neutral-700 semi-bold mt-4'>Address:</h2> */}
-              <p className='text-xl text-neutral-100'>{spot.address}</p>
             </div>
             <div className='flex flex-col gap-y-2 mt-4 md:mt-0'>
               <p className='hidden md:block font-semibold text-neutral-600 text-xl'>
@@ -55,6 +55,7 @@ function SpotPage() {
           </div>
         </div>
       </Header>
+      <SpotPageContent address={spot.address} review={spot.review} comment={spot.comment}/>         
     </div>
   );
 };
