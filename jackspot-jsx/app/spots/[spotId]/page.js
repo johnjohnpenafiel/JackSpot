@@ -40,7 +40,7 @@ function SpotPage() {
         <div className='mt-10'>
           <div className='flex flex-col md:flex-row items-center gap-x-5'>
             <div className='lg:h-60 lg:w-60 flex-shrink-0'>
-              {(!spot.image ? null : 
+              {(!spot.image ? <img alt='Spot' className='object-cover h-60 w-60 rounded-lg' src='https://static-00.iconduck.com/assets.00/location-icon-512x512-vfbc251m.png'/> : 
                 <img alt='Spot' className='object-cover h-60 w-60 rounded-lg' src={spot.image}/>
               )}
             </div>
