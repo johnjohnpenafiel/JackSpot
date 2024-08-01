@@ -12,15 +12,18 @@ import { useCollections } from '@/hooks/useCollections';
 function Library() {
 
     const postModal = usePostModal();
-    const { collections } = useCollections();
+    const { collections, fetchCollections } = useCollections();
 
+    function handleCollectionDelete() {
+        fetchCollections();
+    }
 
     function handleModalCLick() {
         return postModal.onOpen()
     }
    
     const collection_list = collections.map((collection) => (
-        <CollectionItem key={collection.id} id={collection.id} title={collection.title} />
+        <CollectionItem key={collection.id} id={collection.id} title={collection.title} deleteCollection={handleCollectionDelete} />
     ));
 
 

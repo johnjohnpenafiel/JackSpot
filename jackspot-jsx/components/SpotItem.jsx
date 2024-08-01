@@ -4,7 +4,7 @@ import React from 'react'
 import Link from 'next/link';
 import { FaMinus } from "react-icons/fa6";
  
-function SpotItem({ id, name, type, deleteCollection }){
+function SpotItem({ id, name, type, deleteSpot }){
 
 
   function handleDelete(e) {
@@ -14,7 +14,7 @@ function SpotItem({ id, name, type, deleteCollection }){
     }).then((response) => {
       if (response.ok) {
       }
-     deleteCollection(id)
+     deleteSpot(id)
     });
   }
 

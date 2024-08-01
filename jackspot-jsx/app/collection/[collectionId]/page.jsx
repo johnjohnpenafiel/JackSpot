@@ -2,10 +2,11 @@
 
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'next/navigation';
-import { useCollections } from '@/hooks/useCollections';
+import { useRouter } from 'next/navigation';
 
 import { FaPlus } from "react-icons/fa6";
 
+import { useCollections } from '@/hooks/useCollections';
 import Header from '@/components/Header';
 import SpotItem from '@/components/SpotItem';
 import usePostSpotModal from "@/hooks/usePostSpotModal";
@@ -16,8 +17,9 @@ import Box from '@/components/Box';
 function CollectionPage() {
   
   const { collectionId } = useParams();
-  const { collections, setCollections, fetchCollections } = useCollections();
+  const { collections, fetchCollections } = useCollections();
   const postModal = usePostSpotModal();
+  const router = useRouter();
   
   const [collection, setCollection] = useState(null);
 
@@ -53,7 +55,7 @@ function CollectionPage() {
   }
 
   const sortedSpots = collection.spots.slice().sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
-  const spotList = sortedSpots.map((spot) => <SpotItem key={spot.id} name={spot.name} type={spot.type} id={spot.id} deleteCollection={deleteSpotFromCollection} />)
+  const spotList = sortedSpots.map((spot) => <SpotItem key={spot.id} name={spot.name} type={spot.type} id={spot.id} deleteSpot={deleteSpotFromCollection} />)
 
   return (
     <div className="bg-neutral-400 rounded-lg h-full w-full overflow-hidden overflow-y-auto">
