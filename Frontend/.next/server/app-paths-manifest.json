@@ -1,6 +1,6 @@
 {
   "/(site)/page": "app/(site)/page.js",
-  "/collection/[collectionId]/page": "app/collection/[collectionId]/page.js",
   "/search/page": "app/search/page.js",
+  "/collection/[collectionId]/page": "app/collection/[collectionId]/page.js",
   "/spots/[spotId]/page": "app/spots/[spotId]/page.js"
 }
