@@ -34,3 +34,7 @@
 - **Search and Filters**: Implement more advanced search and filtering options.
 - **User Profiles**: Allow users to create profiles and personalize their collections.
 - **Integration with Maps**: Integrate maps for viewing spots visually on a map interface.
+
+## Purpose
+
+**JackSpot** was created as the final project of my Flatiron School program, designed to showcase the technical skills and knowledge I gained throughout my journey. The project integrates full-stack development techniques, combining a modern frontend with React and Next.js, and a robust backend with Python, Flask, and SQLAlchemy. JackSpot aims to provide a social, user-friendly platform for discovering and sharing favorite locations, demonstrating the practical application of all the core technologies and concepts learned during my time at Flatiron.
