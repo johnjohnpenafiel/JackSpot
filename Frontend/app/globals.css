@@ -8,5 +8,6 @@ body,
   height: 100%;
   background-color: rgb(135, 135, 135);
   color-scheme: dark;
+  margin-left: 4px;
+  margin-right: 4px;
 }
-
