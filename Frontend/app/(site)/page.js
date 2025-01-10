@@ -23,7 +23,7 @@ function Home() {
   const latestSpots = sortedSpots.slice(0, 6);
 
   return (
-    <div className="bg-neutral-400 rounded-lg h-full w-full overflow-hidden overflow-y-auto">
+    <div className="bg-neutral-300/50 rounded-lg h-full w-full overflow-hidden overflow-y-auto">
       <Header>
         <div className="mb-2">
           <h1 className="text-neutral-700 text-6xl font-semibold mt-10">

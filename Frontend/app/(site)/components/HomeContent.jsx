@@ -25,8 +25,8 @@ function HomeContent({ id, name, type, address, review }) {
       <div>
         <h2 className="text-lg font-semibold text-gray-800">{name}</h2>
         <p className="text-gray-600">{type}</p>
-        <p className="text-gray-500 text-sm">{check(address)}</p>
-        <p className="text-yellow-500">{generateStars(review)}</p>
+        <p className="text-gray-700 text-sm">{check(address)}</p>
+        <p className="text-yellow-400">{generateStars(review)}</p>
       </div>
     </Link>
   );
